@@ -105,8 +105,8 @@
           <option value="">-- Rent or Own? --</option>
           <option value="rent">Rent</option>
           <option value="own">Own</option>
-          <label><input type="checkbox" id='tsRouter'> LLA uploaded? </label><br>
         </select>
+        <label id="llaLabel" ><input type="checkbox" id='lla'> LLA uploaded? </label><br>
 
 
 
@@ -1507,8 +1507,16 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+//  LLA view toggle Script
+$("#llaLabel").hide()
 
-
+$("#rentOwn").on('change', ()=>{
+  if($("#rentOwn").val() === 'rent'){
+    $("#llaLabel").show()
+  } else{
+    $("#llaLabel").hide()
+  }
+})
 
 </script>
 
