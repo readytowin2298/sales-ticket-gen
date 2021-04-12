@@ -171,8 +171,8 @@
       <div>
         <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Install Options</button>
         <div class="panel"><br>
-          <label><input type="checkbox" id='installopt'> 1 Year $100</font></label>
-  <label><input type="checkbox" id='installopt2'> M2M $250</label>
+          <label><input type="checkbox" id='installopt'> Two Year $99</font></label>
+  <label><input type="checkbox" id='installopt2'> Month to Month $250</label>
   <label><input type="checkbox" id='tsQueuesBad'> 1 Year Two Tech $200 </label>
 
 
@@ -270,7 +270,7 @@
                 <input type="radio" id='installTimeAM' name="timeInstall" value="installTimeAM">
                 <label for="installTimeAM"> 8:00 AM -12:00 PM</label><br>
                 <input type="radio" id='installTimePM' name="timeInstall" value="installTimePM">
-                <label for="installTimePM"> 1:00 PM -5:00 PM</label> <br>
+                <label for="installTimePM"> 1:00 PM -5:00 PM</label> <br><br>
             </label>
            Please click <a style="color: #99e6ff;" href="https://nxlink.sharepoint.com/teams/sales/_layouts/15/Doc.aspx?sourcedoc={616e24cd-5ac8-4cd0-829a-1513aa8e255b}&action=view&wd=target%28Sales%20Process.one%7C1bd9a0c5-f167-431a-934f-055d6ef50ea9%2FGuidelines%20for%20Scheduling%7Caf95d0a6-6bf6-48fa-9c52-3dc27d857e38%2F%29">Scheduling Guidelines</a> for more information. <br><br>
 
@@ -418,7 +418,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 	
 	
 	<input type="text" id='contact' placeholder="Associated tickets" name="" class="mainInputBox" autocomplete="off">
-	<input type="text" id='prevtick' placeholder="Currently schedule on MM/DD/YY" name="" class="mainInputBox2" autocomplete="off">
+	<input type="text" id='prevtick' placeholder="Currently scheduled on MM/DD/YY" name="" class="mainInputBox2" autocomplete="off">
 	
 	<input type="text" id='prefer' placeholder="Zone " name="" class="mainInputBox" autocomplete="off">
 	<input type="text" id='contact' placeholder="Slot" name="" class="mainInputBox2" autocomplete="off">
@@ -463,7 +463,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
   Reminders:
 <ul>
 
-<li> Assign tickets to CWarren or JFlores</li>
+<li> Assign tickets to SFerris or MMcDonald</li>
 <li> Provide as many relevant details as you can</li>
 </ul>
 
@@ -576,8 +576,8 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 	<input type="text" id='prevtick' placeholder="Account number #" name="" class="mainInputBox" autocomplete="off">
     <input type="text" id='prefer' placeholder="Important message" name="" class="mainInputBox2" autocomplete="off">
 
-	<input type="text" id='prevtick' placeholder="Associated tickets" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Billing ticket " name="" class="mainInputBox2" autocomplete="off">
+	<input type="text" id='prevtick' placeholder="Associated ticket #'s" name="" class="mainInputBox" autocomplete="off">
+    <input type="text" id='prefer' placeholder="Billing ticket # " name="" class="mainInputBox2" autocomplete="off">
 
 	<input type="text" id='prevtick' placeholder="GPS coordinates" name="" class="mainInputBox" autocomplete="off">
     <input type="text" id='prefer' placeholder="Where to test" name="" class="mainInputBox2" autocomplete="off">
@@ -628,7 +628,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
   Reminders: <br><br>
 
 <li> Site Survey's are to be placed on Service Scheduler</li>
-<li> This is a $70 non-refundable fee that does not go toward insall costs</li>
+<li> This is a $70 non-refundable fee that does not go toward install costs</li>
 <li> Fee must be collected before scheduling</li>
 
 
@@ -1206,14 +1206,14 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
     <select id="reason" onchange="getSelectValue();" class="dropdown">
       <option value="">-- Reason for Call --</option>
-      <option value="towerclimb"> Schedule Tower Climb</option>
-      <option value="mastinstall"> Schedule Mast Install</option>
-      <option value="p2p"> Schedule Point to Point</option>
-      <option value="tripod"> Schedule 10' Tripod</option>
+      <option value="towerclimb"> Inquire about new service</option>
+      <option value="mastinstall"> Pending tower status</option>
+      <option value="p2p"> General questions</option>
+    
       <option value="other"> Other</option>
 
 
-      <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
+      <input type="text" id='prevtick' placeholder="Relevant ticket #'s ?" name="" class="mainInputBox" autocomplete="off">
       <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
 
     </select>
@@ -1359,21 +1359,33 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
     <select id="reason" onchange="getSelectValue();" class="dropdown">
       <option value="">-- Reason for Call --</option>
-      <option value="towerclimb"> Schedule Tower Climb</option>
-      <option value="mastinstall"> Schedule Mast Install</option>
-      <option value="p2p"> Schedule Point to Point</option>
-      <option value="tripod"> Schedule 10' Tripod</option>
+      <option value="towerclimb"> Add VOIP</option>
+      <option value="mastinstall"> VOIP Questions</option>
       <option value="other"> Other</option>
 
 
-      <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
+      <input type="text" id='prevtick' placeholder="Associated Ticket's?" name="" class="mainInputBox" autocomplete="off">
       <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
-
+      
+      <div>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; VOIP Options</button>
+        <div class="panel"><br>
+          <label><input type="checkbox" id='installopt'> Residential Select $24.95</font></label>
+  <label><input type="checkbox" id='installopt2'> Residential Standard $19.95</label>
+  <label><input type="checkbox" id='tsQueuesBad'> Personal Fax $9.99 </label>
+  <label><input type="checkbox" id='tsQueuesBad'> Standalone Mailbox $2.99 </label>
+  
+  
+  
+  
+  
+  
+  </div>
+  
     </select>
 
 
-
-
+  
 
 
 <!--------------text area ------------------>
