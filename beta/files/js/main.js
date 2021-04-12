@@ -11,7 +11,7 @@ $("#rentOwn").on('change', ()=>{
 
 // Show Plan type drop-down based on radio input
 
-$(".planType").hide()
+$("#M2MPlanType, #HUBBPlanType").hide()
 
 $("input[name='planType']").on('click', ()=>{
   $(".planType").hide()

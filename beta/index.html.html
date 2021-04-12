@@ -99,9 +99,11 @@
        <input type="text" id='Number' placeholder="Account Number?" name="accountNumber" class="mainInputBox" autocomplete="off">
        <input type="text" id='Name' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
 
-        <label><input type="radio" value="2Yr" name="planType">2 Year Plan</label>
-        <label><input type="radio" value="1Yr" name="planType">1 Year Plan</label>
+        <label><input type="radio" value="2Yr" name="planType" checked >2 Year Plan</label>
+        <label><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
         <label><input type="radio" value="HUBB" name="planType">HUBB Plan</label>
+
+      <br>
 
       <select id="2YrPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- Two Year Pricing --</option>
@@ -117,7 +119,7 @@
 
 
 
-      <select id="1YrPlanType" onchange="getSelectValue();" class="dropdown planType">
+      <select id="M2MPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- Month to Month Pricing --</option>
         <option value="AL5">Next10 $59.95</option>
         <option value="AL5">Next15 $69.95</option>
@@ -129,10 +131,10 @@
       
 
 
-</select>
+      </select>
 
 
-      <br>
+      
       <select id="HUBBPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- HUBB Pricing --</option>
         <option value="AL5">Next10 $59.95</option>
