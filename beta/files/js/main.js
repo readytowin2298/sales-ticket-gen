@@ -33,7 +33,6 @@ $("#instTicketGen").on('click', ()=>{
   const accNum = $("#accountNumber").val();
   const msg = $("#message").val();
   const planType = $("input[name='planType']:checked").val();
-  let planOption = $(`#${planType}PlanType`).val();
-
-
+  const planOption = $(`#${planType}PlanType`).val();
+  
 })
