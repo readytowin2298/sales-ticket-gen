@@ -96,8 +96,8 @@
 
 
 
-       <input type="text" id='Number' placeholder="Account Number?" name="accountNumber" class="mainInputBox" autocomplete="off">
-       <input type="text" id='Name' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
+       <input type="text" placeholder="Account Number?" id="itAccountNumber" class="mainInputBox" autocomplete="off">
+       <input type="text" id='itMessage' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
 
         <label><input type="radio" value="2Yr" name="planType" checked >2 Year Plan</label>
         <label><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
@@ -107,13 +107,13 @@
 
       <select id="2YrPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- Two Year Pricing --</option>
-        <option value="AL5">Next15 $49.95</option>
-        <option value="PL10">Next20 $59.95</option>
-        <option value="UL15">Next25 $69.95</option>
-        <option value="PL20">Next35 $79.95</option>
-        <option value="EL25">Next50 $99.95</option>
+        <option value="Next15">Next15 $49.95</option>
+        <option value="Next20">Next20 $59.95</option>
+        <option value="Next25">Next25 $69.95</option>
+        <option value="Next35">Next35 $79.95</option>
+        <option value="Next50">Next50 $99.95</option>
     
-        <option value="ML50">Next100 $119.95</option>
+        <option value="Next100">Next100 $119.95</option>
         
       </select>
 
@@ -121,29 +121,29 @@
 
       <select id="M2MPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- Month to Month Pricing --</option>
-        <option value="AL5">Next10 $59.95</option>
-        <option value="AL5">Next15 $69.95</option>
-        <option value="PL10">Next20 $79.95</option>
-        <option value="UL15">Next25 $89.95</option>
-        <option value="PL20">Next35 $99.95</option>
-        <option value="EL25">Next50 $119.95</option>
-        <option value="SL35">Next100 $139.95</option>
+        <option value="Next10">Next10 $59.95</option>
+        <option value="Next15">Next15 $69.95</option>
+        <option value="Next20">Next20 $79.95</option>
+        <option value="Next25">Next25 $89.95</option>
+        <option value="Next35">Next35 $99.95</option>
+        <option value="Next50">Next50 $119.95</option>
+        <option value="Next100">Next100 $139.95</option>
       
 
 
       </select>
-
+      
 
       
       <select id="HUBBPlanType" onchange="getSelectValue();" class="dropdown planType">
         <option value="">-- HUBB Pricing --</option>
-        <option value="AL5">Next10 $59.95</option>
-        <option value="PL10">Next15 $69.95</option>
-        <option value="UL15">Next20 $79.95</option>
-        <option value="PL20">Next25 $89.95</option>
-        <option value="EL25">Next35 $99.95</option>
-        <option value="SL35">Next50 $109.95</option>
-        <option value="ML50">Next100 $119.95</option>
+        <option value="Next10">Next10 $59.95</option>
+        <option value="Next15">Next15 $69.95</option>
+        <option value="Next20">Next20 $79.95</option>
+        <option value="Next25">Next25 $89.95</option>
+        <option value="Next35">Next35 $99.95</option>
+        <option value="Next50">Next50 $109.95</option>
+        <option value="Next100">Next100 $119.95</option>
 
       </select>
       <br>
@@ -308,7 +308,7 @@
 
 <fieldset>
 <legend>Ticket Notes:</legend>
-<button class="generateNote" onclick='javascript:towerHostFunction();'><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+<button class="generateNote" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
 Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
 <input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
 <div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>

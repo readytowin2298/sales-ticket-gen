@@ -19,3 +19,21 @@ $("input[name='planType']").on('click', ()=>{
   const id = selected + "PlanType"
   $(`#${id}`).show()
 })
+
+
+
+// Install Ticket Generation
+
+$("#instTicketGen").on('click', ()=>{
+  let subject = "";
+  let body = "";
+  let requiredInput = [];
+  const rentOwn = $("#rentOwn").val();
+  const lla = $("#lla").prop('checked');
+  const accNum = $("#accountNumber").val();
+  const msg = $("#message").val();
+  const planType = $("input[name='planType']:checked").val();
+  let planOption = $(`#${planType}PlanType`).val();
+
+
+})
