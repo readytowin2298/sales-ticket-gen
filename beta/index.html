@@ -167,28 +167,40 @@
 
 <!---I messed up the additional features somehow-->
 
-<div>
+<!-- <div> -->
 
 	<button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Additional Features</button>
 	<div class="panel"><br>
 
-    <label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Zyxel $6.99</font></label>
-    <label><input type="checkbox" id='tsRouterBad'><font color="#ffffff"> Mikrotik $0.00</label>
-    <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Static IP $10.00</label><br> <br>
+    <label><input type="checkbox" name="itAdtlCB" id='itZyxel'><font color="#ff8000"> Zyxel $6.99</font></label>
+    <label><input type="checkbox" name="itAdtlCB" id='itMikrotik'> Mikrotik $0.00</label><br> <br>
+
+    <label><input type="checkbox" name="itAdtlCB" id='ithAP'><font color="#ff8000"> MT hAP $0.00</font></label>
+    <label><input type="checkbox" name="itAdtlCB" id='itMesh'> Mesh Unit $3.99</label><br> <br>
+
+    <label><input type="checkbox" name="itAdtlCB" id='itStatic'><font color="#ff8000"> Static IP $10.00 </font></label>
+    <label><input type="checkbox" name="itAdtlCB" id='itVOIP'> VOIP $19.99</label><br> <br>
+
+    <label><input type="checkbox" name="itAdtlCB" id='itLDrop'><font color="#ff8000"> Line Drop $50</font></label>
+    <label><input type="checkbox" name="itAdtlCB" id='itExRDish'> Extended Range Dish $10.00</label><br><br>
+
+    
+    
 
 
-      <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> VOIP $19.99</font></label>
-    <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> MT hAP $0.00</label>
-    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Extended Range Dish $10.00</font></label><br><br>
+    <div><bold style="font-weight: bold;"> TriPod Options:</bold> <br><br>
+      <label> <input type="radio" name="itTri" value="tri3">3' Tipod $5.00 </label>
+      <label> <input type="radio" name="itTri" value="tri10"><font color="#ff8000">10' Tripod $10.00 </font></label>
+      <label> <input type="radio" name="itTri" value="" checked>N/A </label>
+    </div>
 
-        <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Line Drop $50</label>
-          <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Mast 50' $100</label>
-          <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Mast 30' $100</label><br> <br>
+    <br><br>
 
-
-    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Mesh Unit $3.99</label>
-   <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> 3' Tipod $5.00</label>
-    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> 10' Tripod $10.00</label><br>
+    <div><bold style="font-weight: bold;"> Mast Options:</bold> <br><br>
+      <label> <input type="radio" name="itMast" value="mast50">Mast 50' $100</label>
+      <label> <input type="radio" name="itMast" value="mast30"><font color="#ff8000">Mast 30' $100 </font></label>
+      <label> <input type="radio" name="itMast" value="" checked>N/A </label>
+    </div>
 
 	</div>
 
@@ -202,9 +214,9 @@
   <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Sales Options</button>
 	<div class="panel"><br>
 	CAF/HUBB:<br>
-	<label><input type="checkbox" id='tsRouterGood'><font color="#ff8000"> CAF?</font></label>
+	<label><input type="checkbox" id='tsRouterGood'><font color="#ff8000"> CAF?</font></label><span></span>
 	<label><input type="checkbox" id='tsRouterBad'> <font color="#fffff"></font>HUBB?</label><br>
-	<label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Verify in Sales App?</font></label>
+	<label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Verify in Sales App?</font></label><span></span>
   <label><input type="checkbox" id='tsQueuesBad'> Did you mark on user page?</label><br>
   Did you offer VOIP? <br>
 	<label><input type="checkbox" id='tsVerifiedSpeeds'><font color="#ff8000"> Yes</font></label>
