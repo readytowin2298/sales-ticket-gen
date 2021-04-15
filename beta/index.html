@@ -100,7 +100,7 @@
        <input type="text" id='itMessage' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
 
         <label><input type="radio" value="2Yr" name="planType" checked >2 Year Plan</label>
-        <label><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
+        <label style="color: #ff8000;"><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
         <label><input type="radio" value="HUBB" name="planType">HUBB Plan</label>
 
       <br>
@@ -189,17 +189,17 @@
 
 
     <div><bold style="font-weight: bold;"> TriPod Options:</bold> <br><br>
-      <label> <input type="radio" name="itTri" value="tri3">3' Tipod $5.00 </label>
-      <label> <input type="radio" name="itTri" value="tri10"><font color="#ff8000">10' Tripod $10.00 </font></label>
-      <label> <input type="radio" name="itTri" value="" checked>N/A </label>
+      <label> <input type="radio" name="itTri" price="5.00" value="tri3">3' Tipod $5.00 </label>
+      <label> <input type="radio" name="itTri" price="10.00" value="tri10"><font color="#ff8000">10' Tripod $10.00 </font></label>
+      <label> <input type="radio" name="itTri" price="0.00" value="" checked id="itTriNa">N/A </label>
     </div>
 
     <br><br>
 
     <div><bold style="font-weight: bold;"> Mast Options:</bold> <br><br>
-      <label> <input type="radio" name="itMast" value="mast50">Mast 50' $100</label>
-      <label> <input type="radio" name="itMast" value="mast30"><font color="#ff8000">Mast 30' $100 </font></label>
-      <label> <input type="radio" name="itMast" value="" checked>N/A </label>
+      <label> <input type="radio" name="itMast" price="100.00" value="mast50">Mast 50' $100</label>
+      <label> <input type="radio" name="itMast" price="100.00" value="mast30"><font color="#ff8000">Mast 30' $100 </font></label>
+      <label> <input type="radio" name="itMast" price="0.00" value="" checked id="itMastNa">N/A </label>
     </div>
 
 	</div>
@@ -214,18 +214,21 @@
   <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Sales Options</button>
 	<div class="panel"><br>
 	CAF/HUBB:<br>
-	<label><input type="checkbox" id='tsRouterGood'><font color="#ff8000"> CAF?</font></label><span></span>
-	<label><input type="checkbox" id='tsRouterBad'> <font color="#fffff"></font>HUBB?</label><br>
-	<label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Verify in Sales App?</font></label><span></span>
-  <label><input type="checkbox" id='tsQueuesBad'> Did you mark on user page?</label><br>
-  Did you offer VOIP? <br>
-	<label><input type="checkbox" id='tsVerifiedSpeeds'><font color="#ff8000"> Yes</font></label>
-	<label><input type="checkbox" id='tsVerifiedSpeeds2'> No</label>
-  <label><input type="checkbox" id='tsSurvey2'><font color="#ff8000"> N/A </font></label><br>
+	<label style="color: #ff8000;"><input type="radio" name="caf/hubb" value="caf">CAF?</label><span></span>
+	<label><input type="radio" name="caf/hubb" value="hubb">HUBB?</label>
+  <label style="color: #ff8000;" ><input type="radio" name="caf/hubb" value="" checked>Neither</label><br><br>
+
+
+	<label><input type="checkbox" id='itVerHubb'>Verify in Sales App?</label><span></span><br><br>
+  <label style="color: #ff8000;"><input type="checkbox" id='itMkHubb'> Did you mark on user page?</label><br><br>
+  Did you offer VOIP? <br><br>
+	<label><input type="radio" name="itVoip" value="yes" ><font color="#ff8000"> Yes</font></label>
+	<label><input type="radio" name="itVoip" vlaue="no" > No</label>
+  <label><input type="radio" name="itVoip" value="" ><font color="#ff8000"> N/A </font></label><br><br>
   Did you offer Dish Network?<br>
-	<label><input type="checkbox" id='tsDHCPcpe2'><font color="#ff8000"> Yes</font></label>
-	<label><input type="checkbox" id='tsDHCPcpe'> No </label>
-	<label><input type="checkbox" id='tsDHCProuter2'><font color="#ff8000"> N/A</font></label>
+	<label><input type="radio" name="itDish" value="yes"><font color="#ff8000"> Yes</font></label>
+	<label><input type="radio" name="itDish" vlaue="no"> No </label>
+	<label><input type="radio" name="itDish" value=""><font color="#ff8000"> N/A</font></label>
         <br><br>
   </div>
 
