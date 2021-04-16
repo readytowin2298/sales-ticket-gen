@@ -60,17 +60,15 @@ const planPricing = {
 
 $("#installTicketForm").on('submit', (e)=>{
     e.preventDefault()
-    let subject = "";
-    let body = "";
     let total = 0;
-    // let requiredInput = []; ---> For Future implementation
 
     // Gather Data
     const rentOwn = $("#rentOwn").val();
-    const lla = $("#lla").prop('checked');
+    let lla = $("#lla").prop('checked');
     if(rentOwn === 'rent' && !lla){
       return alert("Renters Must have LLA!")
     }
+    const llaNote = rentOwn === 'rent' ? 'LLA Agreement Complete' : "LLA Not Needed";
     const accNum = $("#accountNumber").val();
     const msg = $("#message").val();
     const planType = $("input[name='planType']:checked").val();
@@ -84,54 +82,85 @@ $("#installTicketForm").on('submit', (e)=>{
     total += price
 
     // Begin Additional Features
-    const zyxel = $("#itZyxel").prop('checked') ? $("#itZyxel").parent().text() : "";
+    const zyxel = $("#itZyxel").prop('checked') ? ` - ${$("#itZyxel").parent().text()}\n` : "";
     if(zyxel){total += 6.99}
-    const mikro = $("#itMikrotik").prop('checked') ? $("#itMikrotik").parent().text() : "";
-    const hap = $("#ithAP").prop('checked') ? $("#ithAP").parent().text() : "";
-    const mesh = $("#itMesh").prop('checked') ? $("#itMesh").parent().text() : "";
+    const mikro = $("#itMikrotik").prop('checked') ? ` - ${$("#itMikrotik").parent().text()}\n` : "";
+    const hap = $("#ithAP").prop('checked') ? ` - ${$("#ithAP").parent().text()}\n` : "";
+    const mesh = $("#itMesh").prop('checked') ? ` - ${$("#itMesh").parent().text()}\n` : "";
     if(mesh){total += 3.99}
-    const static = $("#itStatic").prop('checked') ? $("#itStatic").parent().text() : "";
+    const static = $("#itStatic").prop('checked') ? ` - ${$("#itStatic").parent().text()}\n` : "";
     if(static){total += 10}
-    const voip = $("#itVOIP").prop('checked') ? $("#itVOIP").parent().text() : "";
+    const voip = $("#itVOIP").prop('checked') ? ` - ${$("#itVOIP").parent().text()}\n` : "";
     if(voip){total += 19.99}
-    const lDrop = $("#itLDrop").prop('checked') ? $("#itLDrop").parent().text() : "";
+    const lDrop = $("#itLDrop").prop('checked') ? ` - ${$("#itLDrop").parent().text()}\n` : "";
     if(lDrop){total += 50}
-    const exRDish = $("#itExRDish").prop('checked') ? $("#itExRDish").parent().text() : "";
+    const exRDish = $("#itExRDish").prop('checked') ? ` - ${$("#itExRDish").parent().text()}\n` : "";
     if(exRDish){total += 10}
     let tripod = ""
     let mast = ""
     if($("input[name='itTri']:checked").val()){
       // set var
-      tripod = $("input[name='itTri']:checked").parent().text();
+      tripod = ` - Tripod: ${$("input[name='itTri']:checked").parent().text()}\n`;
       // update total
       total += Number($("input[name='itTri']:checked").attr('price'));
     }
     if($("input[name='itMast']:checked").val()){
       // set var
-      mast = $("input[name='itTri']:checked").parent().text();
+      mast = ` - Mast: ${$("input[name='itTri']:checked").parent().text()}\n`;
       // update total
       total += Number($("input[name='itMast']:checked").attr('price'));
     }
     // Begin Sales Options
-    const hubb = $("input[name='caf/hubb']:checked").val() ? `CAFF/HUBB: ${$("input[name='caf/hubb']:checked").val()}` : "";
-    const verHubb = $("#itVerHubb").prop('checked') ? "Verified in Sales App" : "";
-    const mkHubb = $("#itMkHubb").prop('checked') ? "Marked on User Page" : "";
-    const offVOIP = `Offered VOIP: ${$("input[name='itVOIP']:checked").val()}`;
-    const offDish = `Offered Dish Network: ${$("input[name='itDish']:checked").val()}`;
+    const hubb = $("input[name='caf/hubb']:checked").val() ? ` - CAFF/HUBB: ${$("input[name='caf/hubb']:checked").val()}\n` : "";
+    const verHubb = $("#itVerHubb").prop('checked') ? " - Verified in Sales App\n" : "";
+    const mkHubb = $("#itMkHubb").prop('checked') ? " - Marked on User Page\n" : "";
+    const offVOIP = ` - Offered VOIP: ${$("input[name='itVOIP']:checked").val()}\n`;
+    const offDish = ` - Offered Dish Network: ${$("input[name='itDish']:checked").val()}\n`;
     // Final Inputs
-    const zone = `Installation Zone: ${$("#itZone").val()}`;
-    const slot = `Scheduler Slot: ${$("#itSlot").val()}`;
-    const coords = $("#itCoords").val();
-    const beThere = `Who will be there: ${$("#itBeThere").val()}`;
-    const inDis = $("#itInDis").val() ? `Install Discount: $${$("#itInDis").val()}` : "";
-    const plDis = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
-    const disRea = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
-    const date = $("#itDate").val() ? `Installation Date: ${$("#itDate").val()}` : "";
-    const time = $("input[name='timeInstall']:checked").val()
-    const agent = $("#agent").val()
-    
+    const zone = ` - Installation Zone: ${$("#itZone").val()}\n`;
+    const slot = ` - Scheduler Slot: ${$("#itSlot").val()}\n`;
+    const coords = ` - Coordinates: ${$("#itCoords").val()}\n`;
+    const beThere = ` - Who will be there: ${$("#itBeThere").val()}\n`;
+    const inDis = $("#itInDis").val() ? ` - Install Discount: $${$("#itInDis").val()}\n` : "";
+    const plDis = $("#itPlDis").val() ? ` - Plan Discount: $${$("#itPlDis").val()}\n` : "";
+    const disRea = $("#itPlDis").val() ? ` - Plan Discount: $${$("#itPlDis").val()}\n` : "";
+    const date = $("#itDate").val() ? ` - Installation Date: ${$("#itDate").val()}\n` : "";
+    const time = ' - ' + $("input[name='timeInstall']:checked").val() + '\n';
+    const agent = $("#agent").val();
+    const notes = $("#itNotes").val();
     
     // Generate and append subject to DOM
-    subject += 'Install | ' + $("#itDate").val() + ' | ' + time + ' | ' + zone + ' | ' + hubb
+    let subject = 'Install | ' + $("#itDate").val() + ' | ' + time + ' | ' + zone + ' | ' + hubb
     $("#itSubject").val(subject);
+
+    let body = `
+    ##Installation Notes##
+    Install note prepared by ${agent}.\n
+    \n
+    Account# : ${accNum}\n
+    Zone : ${zone}\n
+    Important Messages: ${msg}\n
+    Rent/Own: ${rentOwn} | LLA: ${llaNote}\n
+    \n
+    \n
+    Plan Type: ${planType}\n
+    Plan Option : ${planOption}\n
+    \n
+    ---Additional Features---\n
+    ${ zyxel + mikro + hap + mesh + static + voip + lDrop + exRDish + tripod + mast }\n\n
+
+
+    ---Sales Options---\n
+    ${ hubb + verHubb + mkHubb + offVOIP + offDish }\n\n
+
+    ---Appointment Details---\n
+    ${ zone + slot + coords + beThere + inDis + plDis + disRea + date + time }\n\n
+
+    Total Cost: $${price}
+
+    **Agent Notes**
+    ${notes}
+    `
+    $("#itBody").val(body)
+    return true
 })
