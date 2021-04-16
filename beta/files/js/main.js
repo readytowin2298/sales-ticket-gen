@@ -80,14 +80,21 @@ $("#instTicketGen").on('click', ()=>{
     // reference above planPricing object for cost of plan
     const price = planPricing[planType][planOption];
     total += price
+    // Begin Additional Features
     const zyxel = $("#itZyxel").prop('checked') ? $("#itZyxel").parent().text() : "";
+    if(zyxel){total += 6.99}
     const mikro = $("#itMikrotik").prop('checked') ? $("#itMikrotik").parent().text() : "";
     const hap = $("#ithAP").prop('checked') ? $("#ithAP").parent().text() : "";
     const mesh = $("#itMesh").prop('checked') ? $("#itMesh").parent().text() : "";
+    if(mesh){total += 3.99}
     const static = $("#itStatic").prop('checked') ? $("#itStatic").parent().text() : "";
+    if(static){total += 10}
     const voip = $("#itVOIP").prop('checked') ? $("#itVOIP").parent().text() : "";
+    if(voip){total += 19.99}
     const lDrop = $("#itLDrop").prop('checked') ? $("#itLDrop").parent().text() : "";
+    if(lDrop){total += 50}
     const exRDish = $("#itExRDish").prop('checked') ? $("#itExRDish").parent().text() : "";
+    if(exRDish){total += 10}
     let tripod = ""
     let mast = ""
     if($("input[name='itTri']:checked").val()){
@@ -102,5 +109,18 @@ $("#instTicketGen").on('click', ()=>{
       // update total
       total += Number($("input[name='itMast']:checked").attr('price'));
     }
-
+    // Begin Sales Options
+    const hubb = `CAFF/HUBB: ${$("input[name='planType']:checked").val()}`;
+    const verHubb = $("#itVerHubb").prop('checked') ? "Verified in Sales App" : "";
+    const mkHubb = $("#itMkHubb").prop('checked') ? "Marked on User Page" : "";
+    const offVOIP = `Offered VOIP: ${$("input[name='itVOIP']:checked").val()}`;
+    const offDish = `Offered Dish Network: ${$("input[name='itDish']:checked").val()}`;
+    // Final Inputs
+    const zone = `Installation Zone: ${$("#itZone").val()}`;
+    const slot = `Scheduler Slot: ${$("#itSlot").val()}`;
+    const coords = $("#itCoords").val();
+    const beThere = `Who will be there: ${$("#itBeThere").val()}`;
+    const inDis = $("#itInDis").val() ? `Install Discount: $${$("#itInDis").val()}` : "";
+    const plDis = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
+    const disRea = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
 })
