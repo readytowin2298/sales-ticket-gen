@@ -77,9 +77,11 @@ $("#instTicketGen").on('click', ()=>{
     if(!planOption){
       return alert("Please select plan")
     }
+
     // reference above planPricing object for cost of plan
     const price = planPricing[planType][planOption];
     total += price
+
     // Begin Additional Features
     const zyxel = $("#itZyxel").prop('checked') ? $("#itZyxel").parent().text() : "";
     if(zyxel){total += 6.99}
@@ -123,4 +125,10 @@ $("#instTicketGen").on('click', ()=>{
     const inDis = $("#itInDis").val() ? `Install Discount: $${$("#itInDis").val()}` : "";
     const plDis = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
     const disRea = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
+    const date = $("#itDate").val() ? `Installation Date: ${$("#itDate").val()}` : "";
+    const time = $("#timeInstall").val()
+    const agent = $("#agent").val()
+    const requiredNodes = [
+
+    ]
 })
