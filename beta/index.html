@@ -80,7 +80,7 @@
 <!-- **************************** Install Ticket **************************** -->
 
   <div id="installTicket" class="tabcontent">
-    <form action="#">
+    <form id="installTicketForm">
     <fieldset class="fieldsetTop">
       <legend><i class="fas fa-clipboard-check"></i>  Install Ticket</legend>
 
@@ -301,9 +301,9 @@
 <legend>Ticket Notes:</legend>
 <button class="generateNote" type="submit" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
 Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
-<input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
+<input type="text" class="textboxInput" id='itSubject' autocomplete="off"></textarea><br>
 <div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
-<textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
+<textarea id='itBody' class="textarea200" autocomplete="off"></textarea><br>
 </fieldset>
 </form>
 </div>

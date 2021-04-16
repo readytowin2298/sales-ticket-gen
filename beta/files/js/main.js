@@ -58,7 +58,8 @@ const planPricing = {
 
 // Install Ticket Generation
 
-$("#instTicketGen").on('click', ()=>{
+$("#installTicketForm").on('submit', (e)=>{
+    e.preventDefault()
     let subject = "";
     let body = "";
     let total = 0;
@@ -112,7 +113,7 @@ $("#instTicketGen").on('click', ()=>{
       total += Number($("input[name='itMast']:checked").attr('price'));
     }
     // Begin Sales Options
-    const hubb = `CAFF/HUBB: ${$("input[name='planType']:checked").val()}`;
+    const hubb = $("input[name='caf/hubb']:checked").val() ? `CAFF/HUBB: ${$("input[name='caf/hubb']:checked").val()}` : "";
     const verHubb = $("#itVerHubb").prop('checked') ? "Verified in Sales App" : "";
     const mkHubb = $("#itMkHubb").prop('checked') ? "Marked on User Page" : "";
     const offVOIP = `Offered VOIP: ${$("input[name='itVOIP']:checked").val()}`;
@@ -126,9 +127,11 @@ $("#instTicketGen").on('click', ()=>{
     const plDis = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
     const disRea = $("#itPlDis").val() ? `Plan Discount: $${$("#itPlDis").val()}` : "";
     const date = $("#itDate").val() ? `Installation Date: ${$("#itDate").val()}` : "";
-    const time = $("#timeInstall").val()
+    const time = $("input[name='timeInstall']:checked").val()
     const agent = $("#agent").val()
-    const requiredNodes = [
-
-    ]
+    
+    
+    // Generate and append subject to DOM
+    subject += 'Install | ' + $("#itDate").val() + ' | ' + time + ' | ' + zone + ' | ' + hubb
+    $("#itSubject").val(subject);
 })
