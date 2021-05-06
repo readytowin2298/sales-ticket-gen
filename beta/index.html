@@ -80,12 +80,13 @@
 <!-- **************************** Install Ticket **************************** -->
 
   <div id="installTicket" class="tabcontent">
+    <form id="installTicketForm">
     <fieldset class="fieldsetTop">
       <legend><i class="fas fa-clipboard-check"></i>  Install Ticket</legend>
 
 
 
-        <select id="rentOwn" class="dropdown">
+        <select id="rentOwn" class="dropdown" >
           <option value="">-- Rent or Own? --</option>
           <option value="rent">Rent</option>
           <option value="own">Own</option>
@@ -96,7 +97,7 @@
 
 
 
-       <input type="text" placeholder="Account Number?" id="itAccountNumber" class="mainInputBox" autocomplete="off">
+       <input type="text" placeholder="Account Number?" required id="itAccountNumber" class="mainInputBox" autocomplete="off">
        <input type="text" id='itMessage' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
 
         <label><input type="radio" value="2Yr" name="planType" checked >2 Year Plan</label>
@@ -234,10 +235,10 @@
 
 
 
-<input type="text" id='itZone' placeholder="Zone?" name="" class="mainInputBox" autocomplete="off">
-<input type="text" id='itSlot' placeholder="Slot?" name="" class="mainInputBox2" autocomplete="off">
-<input type="text" id='itCoords' placeholder="Coordinates?" name="Coordinates" class="mainInputBox" autocomplete="off">
-<input type="text" id='itBeThere' placeholder="Who will be there (over 18 yrs. old)?" name="" class="mainInputBox2" autocomplete="off">
+<input type="text" id='itZone' placeholder="Zone?" name="" class="mainInputBox" autocomplete="off" required>
+<input type="text" id='itSlot' placeholder="Slot?" name="" class="mainInputBox2" autocomplete="off" required>
+<input type="text" id='itCoords' placeholder="Coordinates?" name="Coordinates" class="mainInputBox" autocomplete="off" required>
+<input type="text" id='itBeThere' placeholder="Who will be there (over 18 yrs. old)?" name="" class="mainInputBox2" autocomplete="off" required>
 
 <p>For discounts, input numbers only <span style="color: #ff8000;">(no $)</span></p>
 <input type="text" id='itInDis' placeholder="Install Discount?" name="" class="mainInputBox" autocomplete="off">
@@ -247,9 +248,9 @@
 <input type="text" class="mainInputBox2" id="itDate" placeholder="MM/DD/YY" type="text" autocomplete="off"/>
             <label>
               <font color="#ffffff">  
-                <input type="radio" id='installTimeAM' name="timeInstall" value="installTimeAM">
+                <input type="radio" id='installTimeAM' name="timeInstall" value="8:00 AM -12:00 PM">
                 <label for="installTimeAM"> 8:00 AM -12:00 PM</label><br>
-                <input type="radio" id='installTimePM' name="timeInstall" value="installTimePM">
+                <input type="radio" id='installTimePM' name="timeInstall" value="1:00 PM -5:00 PM">
                 <label for="installTimePM"> 1:00 PM -5:00 PM</label> <br><br>
             </label>
            Please click <a style="color: #99e6ff;" href="https://nxlink.sharepoint.com/teams/sales/_layouts/15/Doc.aspx?sourcedoc={616e24cd-5ac8-4cd0-829a-1513aa8e255b}&action=view&wd=target%28Sales%20Process.one%7C1bd9a0c5-f167-431a-934f-055d6ef50ea9%2FGuidelines%20for%20Scheduling%7Caf95d0a6-6bf6-48fa-9c52-3dc27d857e38%2F%29">Scheduling Guidelines</a> for more information. <br><br>
@@ -279,8 +280,8 @@
 
 
 
-            <input type="text" id='expectations' placeholder="Agent Initials" name="" class="mainInputBox" autocomplete="off">
-			<input type="text" id='total' placeholder="Total?" name="" class="mainInputBox2" autocomplete="off">
+      <input type="text" id='agent' placeholder="Agent Initials" name="" class="mainInputBox" autocomplete="off" required>
+			
 
 
     </fieldset>
@@ -290,7 +291,7 @@
 
   <fieldset>
     <legend>Important Notes</legend><br>
-        <textarea id='Summary' class="textarea200" placeholder="Any relevant information?"; "autocomplete="off"></textarea>
+        <textarea id='itNotes' class="textarea200" placeholder="Any relevant information?"; "autocomplete="off"></textarea>
 
 
 
@@ -298,13 +299,13 @@
 
 <fieldset>
 <legend>Ticket Notes:</legend>
-<button class="generateNote" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+<button class="generateNote" type="submit" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
 Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
-<input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
+<input type="text" class="textboxInput" id='itSubject' autocomplete="off"></textarea><br>
 <div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
-<textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
+<textarea id='itBody' class="textarea200" autocomplete="off"></textarea><br>
 </fieldset>
-
+</form>
 </div>
 
 
