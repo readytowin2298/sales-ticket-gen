@@ -300,9 +300,9 @@
 <fieldset>
 <legend>Ticket Notes:</legend>
 <button class="generateNote" type="submit" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
-Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
+Subject Line: <button class="btn-copy" id="it-sub-btn">COPY</button><br>
 <input type="text" class="textboxInput" id='itSubject' autocomplete="off"></textarea><br>
-<div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
+<div>Ticket Display: <button class="btn-copy" id="it-bod-btn">COPY</button></div>
 <textarea id='itBody' class="textarea200" autocomplete="off"></textarea><br>
 </fieldset>
 </form>
@@ -1494,7 +1494,7 @@ for (i = 0; i < acc.length; i++) {
 
 <!-- David's Js -->
 <script type="text/javascript" src="files/js/main.js?v=2.6"></script> <!-- JS scripts for all pages-->
-
+<script type="text/javascript" src="files/js/copy.js?v=1.0"></script> <!-- JS script for copy function and related event listeners-->
 
 </article>
 </section>
