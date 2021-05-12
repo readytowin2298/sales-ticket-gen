@@ -113,6 +113,9 @@ $("#installTicketForm").on('submit', (e)=>{
       // update total
       total += Number($("input[name='itMast']:checked").attr('price'));
     }
+    if($("#itEbb").prop('checked')){
+      total -= 50
+    }
     // Begin Sales Options
     const hubb = $("input[name='caf/hubb']:checked").val() ? ` - CAFF/HUBB: ${$("input[name='caf/hubb']:checked").val()}\n` : "";
     const verHubb = $("#itVerHubb").prop('checked') ? " - Verified in Sales App\n" : "";
@@ -124,9 +127,6 @@ $("#installTicketForm").on('submit', (e)=>{
     const slot = ` - Scheduler Slot: ${$("#itSlot").val()}\n`;
     const coords = ` - Coordinates: ${$("#itCoords").val()}\n`;
     const beThere = ` - Who will be there: ${$("#itBeThere").val()}\n`;
-    const inDis = $("#itInDis").val() ? ` - Install Discount: $${$("#itInDis").val()}\n` : "";
-    const plDis = $("#itPlDis").val() ? ` - Plan Discount: $${$("#itPlDis").val()}\n` : "";
-    const disRea = $("#itPlDis").val() ? ` - Plan Discount: $${$("#itPlDis").val()}\n` : "";
     const date = $("#itDate").val() ? ` - Installation Date: ${$("#itDate").val()}\n` : "";
     const time = ' - ' + $("input[name='timeInstall']:checked").val() + '\n';
     const agent = $("#agent").val();
