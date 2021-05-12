@@ -63,6 +63,9 @@ $("#installTicketForm").on('submit', (e)=>{
     let total = 0;
 
     // Gather Data
+    const name = $("#itName").val();
+    const address = $("#itAddress").val();
+
     const rentOwn = $("#rentOwn").val();
     let lla = $("#lla").prop('checked');
     if(rentOwn === 'rent' && !lla){
@@ -137,6 +140,8 @@ $("#installTicketForm").on('submit', (e)=>{
     ##Installation Notes##
     Install note prepared by ${agent}.\n
     \n
+    Who's Calling: ${name} \n
+    Address: ${address}\n
     Account# : ${accNum}\n
     Zone : ${zone}\n
     Important Messages: ${msg}\n
