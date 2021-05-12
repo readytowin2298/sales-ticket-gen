@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- **************************** David And Sydney Created this page for Nextlink Internet, based on previous works from Bob and Wihl ****************************-->
+<!-- **************************** Bob & Wihl created this page for Nextlink ****************************-->
 
   <head>
     <meta charset="utf-8">
@@ -80,15 +80,12 @@
 <!-- **************************** Install Ticket **************************** -->
 
   <div id="installTicket" class="tabcontent">
-    <form id="installTicketForm">
     <fieldset class="fieldsetTop">
       <legend><i class="fas fa-clipboard-check"></i>  Install Ticket</legend>
 
 
-        <input type="text" class="mainInputBox" placeholder="Who's Calling?" required id="itName">
-        <input type="text" class="mainInputBox2" placeholder="Address" required id="itAddress">
-        
-        <select id="rentOwn" class="dropdown" >
+
+        <select id="rentOwn" class="dropdown">
           <option value="">-- Rent or Own? --</option>
           <option value="rent">Rent</option>
           <option value="own">Own</option>
@@ -99,11 +96,11 @@
 
 
 
-       <input type="text" placeholder="Account Number?" required id="itAccountNumber" class="mainInputBox" autocomplete="off">
+       <input type="text" placeholder="Account Number?" id="itAccountNumber" class="mainInputBox" autocomplete="off">
        <input type="text" id='itMessage' placeholder="Important Message (dogs, gate codes, etc)" name="importantmessage" class="mainInputBox2" autocomplete="off">
 
         <label><input type="radio" value="2Yr" name="planType" checked >2 Year Plan</label>
-        <label style="color: #ff8000;"><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
+        <label><input type="radio" value="M2M" name="planType">Month to Month Plan</label>
         <label><input type="radio" value="HUBB" name="planType">HUBB Plan</label>
 
       <br>
@@ -159,10 +156,9 @@
 
 
 
+<!-- **************************** Install Options ************************************************************* -->
 
       <div>
-        <label for="itEbb">EBB Eligible?</label>
-        <input type="checkbox" id="itEbb" name="itEbb" autocomplete="off"><br>
        
 
 <br>
@@ -171,40 +167,28 @@
 
 <!---I messed up the additional features somehow-->
 
-<!-- <div> -->
+<div>
 
 	<button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Additional Features</button>
 	<div class="panel"><br>
 
-    <label><input type="checkbox" name="itAdtlCB" id='itZyxel'><font color="#ff8000"> Zyxel $6.99</font></label>
-    <label><input type="checkbox" name="itAdtlCB" id='itMikrotik'> Mikrotik $0.00</label><br> <br>
-
-    <label><input type="checkbox" name="itAdtlCB" id='ithAP'><font color="#ff8000"> MT hAP $0.00</font></label>
-    <label><input type="checkbox" name="itAdtlCB" id='itMesh'> Mesh Unit $3.99</label><br> <br>
-
-    <label><input type="checkbox" name="itAdtlCB" id='itStatic'><font color="#ff8000"> Static IP $10.00 </font></label>
-    <label><input type="checkbox" name="itAdtlCB" id='itVOIP'> VOIP $19.99</label><br> <br>
-
-    <label><input type="checkbox" name="itAdtlCB" id='itLDrop'><font color="#ff8000"> Line Drop $50</font></label>
-    <label><input type="checkbox" name="itAdtlCB" id='itExRDish'> Extended Range Dish $10.00</label><br><br>
-
-    
-    
+    <label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Zyxel $6.99</font></label>
+    <label><input type="checkbox" id='tsRouterBad'><font color="#ffffff"> Mikrotik $0.00</label>
+    <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Static IP $10.00</label><br> <br>
 
 
-    <div><bold style="font-weight: bold;"> TriPod Options:</bold> <br><br>
-      <label> <input type="radio" name="itTri" price="5.00" value="tri3">3' Tipod $5.00 </label>
-      <label> <input type="radio" name="itTri" price="10.00" value="tri10"><font color="#ff8000">10' Tripod $10.00 </font></label>
-      <label> <input type="radio" name="itTri" price="0.00" value="" checked id="itTriNa">N/A </label>
-    </div>
+      <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> VOIP $19.99</font></label>
+    <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> MT hAP $0.00</label>
+    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Extended Range Dish $10.00</font></label><br><br>
 
-    <br><br>
+        <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Line Drop $50</label>
+          <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Mast 50' $100</label>
+          <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> Mast 30' $100</label><br> <br>
 
-    <div><bold style="font-weight: bold;"> Mast Options:</bold> Mast is needed <input type="checkbox" id="itMastReq"> <br><br>
-      <label> <input type="radio" name="itMast" price="100.00" value="mast50">Mast 50' $100</label>
-      <label> <input type="radio" name="itMast" price="100.00" value="mast30"><font color="#ff8000">Mast 30' $100 </font></label>
-      <label> <input type="radio" name="itMast" price="0.00" value="" checked id="itMastNa">N/A </label>
-    </div>
+
+    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> Mesh Unit $3.99</label>
+   <label><input type="checkbox" id='tsQueuesBad'><font color="#ff8000"> 3' Tipod $5.00</label>
+    <label><input type="checkbox" id='tsQueuesBad'><font color="#ffffff"> 10' Tripod $10.00</label><br>
 
 	</div>
 
@@ -218,40 +202,51 @@
   <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Sales Options</button>
 	<div class="panel"><br>
 	CAF/HUBB:<br>
-	<label style="color: #ff8000;"><input type="radio" name="caf/hubb" value="caf">CAF?</label><span></span>
-	<label><input type="radio" name="caf/hubb" value="hubb">HUBB?</label>
-  <label style="color: #ff8000;" ><input type="radio" name="caf/hubb" value="" checked>Neither</label><br><br>
-
-
-	<label><input type="checkbox" id='itVerHubb'>Verify in Sales App?</label><br><br>
-  <label style="color: #ff8000;"><input type="checkbox" id='itMkHubb'> Did you mark on user page?</label> <br><br>
-  Did you offer VOIP? <br><br>
-	<label style="color: #ff8000;"><input type="radio" name="itVOIP" value="Yes" >Yes</label>
-	<label><input type="radio" name="itVOIP" vlaue="No" > No</label>
-  <label style="color: #ff8000;"><input type="radio" name="itVOIP" value="N/A" checked> N/A </label><br><br>
+	<label><input type="checkbox" id='tsRouterGood'><font color="#ff8000"> CAF?</font></label>
+	<label><input type="checkbox" id='tsRouterBad'> <font color="#fffff"></font>HUBB?</label><br>
+	<label><input type="checkbox" id='tsQueuesGood'><font color="#ff8000"> Verify in Sales App?</font></label>
+  <label><input type="checkbox" id='tsQueuesBad'> Did you mark on user page?</label><br>
+  Did you offer VOIP? <br>
+	<label><input type="checkbox" id='tsVerifiedSpeeds'><font color="#ff8000"> Yes</font></label>
+	<label><input type="checkbox" id='tsVerifiedSpeeds2'> No</label>
+  <label><input type="checkbox" id='tsSurvey2'><font color="#ff8000"> N/A </font></label><br>
   Did you offer Dish Network?<br>
-	<label style="color: #ff8000;"><input type="radio" name="itDish" value="Yes"> Yes</label>
-	<label><input type="radio" name="itDish" vlaue="No"> No </label>
-	<label style="color: #ff8000;"><input type="radio" name="itDish" value="N/A"checked> N/A</label>
+	<label><input type="checkbox" id='tsDHCPcpe2'><font color="#ff8000"> Yes</font></label>
+	<label><input type="checkbox" id='tsDHCPcpe'> No </label>
+	<label><input type="checkbox" id='tsDHCProuter2'><font color="#ff8000"> N/A</font></label>
         <br><br>
   </div>
 
 
 
-<input type="text" id='itZone' placeholder="Zone?" name="" class="mainInputBox" autocomplete="off" required>
-<input type="text" id='itSlot' placeholder="Slot?" name="" class="mainInputBox2" autocomplete="off" required>
-<input type="text" id='itCoords' placeholder="Coordinates?" name="Coordinates" class="mainInputBox" autocomplete="off" required>
-<input type="text" id='itBeThere' placeholder="Who will be there (over 18 yrs. old)?" name="" class="mainInputBox2" autocomplete="off" required>
+<input type="text" id='zone' placeholder="Zone?" name="" class="mainInputBox" autocomplete="off">
+<input type="text" id='slot' placeholder="Slot?" name="" class="mainInputBox2" autocomplete="off">
+<input type="text" id='Number' placeholder="Coordinates?" name="Coordinates" class="mainInputBox" autocomplete="off">
+<input type="text" id='Number' placeholder="Who will be there (over 18 yrs. old)?" name="" class="mainInputBox2" autocomplete="off">
 
-<input type="text" class="textboxInput" id="itDate" placeholder="MM/DD/YY" type="text" autocomplete="off"/>
-<br><br>
 
+<input type="text" id='Number' placeholder="Install Discount?" name="" class="mainInputBox" autocomplete="off">
+<br>
+<input type="text" id='Number' placeholder="Plan Discount?" name="" class="mainInputBox2" autocomplete="off">
+<br>
+<input type="text" id='Number' placeholder="Discount Reason?" name="" class="mainInputBox" autocomplete="off">
+
+
+
+
+
+
+
+
+
+<br> <br>
+             <div> &nbsp; &nbsp; &nbsp; <input type="text" class="mainInputBox2" id="itDate" placeholder="MM/DD/YY" type="text" autocomplete="off"/></div>
 
             <label>
               <font color="#ffffff">  
-                <input type="radio" id='installTimeAM' name="timeInstall" value="8:00 AM -12:00 PM">
+                <input type="radio" id='installTimeAM' name="timeInstall" value="installTimeAM">
                 <label for="installTimeAM"> 8:00 AM -12:00 PM</label><br>
-                <input type="radio" id='installTimePM' name="timeInstall" value="1:00 PM -5:00 PM">
+                <input type="radio" id='installTimePM' name="timeInstall" value="installTimePM">
                 <label for="installTimePM"> 1:00 PM -5:00 PM</label> <br><br>
             </label>
            Please click <a style="color: #99e6ff;" href="https://nxlink.sharepoint.com/teams/sales/_layouts/15/Doc.aspx?sourcedoc={616e24cd-5ac8-4cd0-829a-1513aa8e255b}&action=view&wd=target%28Sales%20Process.one%7C1bd9a0c5-f167-431a-934f-055d6ef50ea9%2FGuidelines%20for%20Scheduling%7Caf95d0a6-6bf6-48fa-9c52-3dc27d857e38%2F%29">Scheduling Guidelines</a> for more information. <br><br>
@@ -274,15 +269,14 @@
 <li>Speeds are burstable, meaning they will fluctuate, especially during high traffic times</li>
 
 
-
 </ul>
 
            </div>
 
 
 
-      <input type="text" id='agent' placeholder="Agent Initials" name="" class="mainInputBox" autocomplete="off" required>
-			
+            <input type="text" id='expectations' placeholder="Agent Initials" name="" class="mainInputBox" autocomplete="off">
+			<input type="text" id='total' placeholder="Total?" name="" class="mainInputBox2" autocomplete="off">
 
 
     </fieldset>
@@ -292,7 +286,7 @@
 
   <fieldset>
     <legend>Important Notes</legend><br>
-        <textarea id='itNotes' class="textarea200" placeholder="Any relevant information?"; "autocomplete="off"></textarea>
+        <textarea id='Summary' class="textarea200" placeholder="Any relevant information?"; "autocomplete="off"></textarea>
 
 
 
@@ -300,13 +294,13 @@
 
 <fieldset>
 <legend>Ticket Notes:</legend>
-<button class="generateNote" type="submit" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
-Subject Line: <button class="btn-copy" id="it-sub-btn">COPY</button><br>
-<input type="text" class="textboxInput" id='itSubject' autocomplete="off"></textarea><br>
-<div>Ticket Display: <button class="btn-copy" id="it-bod-btn">COPY</button></div>
-<textarea id='itBody' class="textarea200" autocomplete="off"></textarea><br>
+<button class="generateNote" id="instTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
+<input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
+<div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
+<textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
 </fieldset>
-</form>
+
 </div>
 
 
@@ -842,20 +836,14 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
 
 <big>Billing</big><br>
-  Hours: Monday-Friday, 8 AM - 6 PM<br><br>
+  Hours: Monday-Friday, 8 AM - 6 PM<br>
   Extension: 8889<br>
-  Assign tickets to: KTrujillo<br><br> <br> <br>
+  Assign tickets to: KRose<br><br> <br> <br>
 
 <big>Tech Support</big><br>
-  Hours: Monday - Friday, 7 AM - 11 PM, Saturday - Sunday 7 AM - 10 PM<br>
-  Extension: 8895<br><br>
-
-  Support Manager: Dwight "JR" Belcher<br>
-  Supervisors: Day - Tim Zwick<br>
-               Night - Laurie Bishop<br>
-               Weekend - Harrison Whitaker <br><br><br><br>
-               <br>
-  
+  Hours: Monday - Friday, 7 AM - 10 PM, Saturday - Sunday 9 AM - 9 PM<br>
+  Extension: 8895<br>
+  Assign tickets to:  DAY, VJohnson; Night, MMercado; <br><br><br><br>
 
 
   <big>New Applicants</big><br> 682-204-3226<br>
@@ -1071,7 +1059,7 @@ A: Yes<br><br><br>
 
 <!----Tech Support------------->
 <fieldset>
-  <legend><i class="fas fa-phone-volume"></i>&nbsp;Tech Support</legend>
+
   <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
   <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
 
@@ -1502,7 +1490,7 @@ for (i = 0; i < acc.length; i++) {
 
 <!-- David's Js -->
 <script type="text/javascript" src="files/js/main.js?v=2.6"></script> <!-- JS scripts for all pages-->
-<script type="text/javascript" src="files/js/copy.js?v=1.0"></script> <!-- JS script for copy function and related event listeners-->
+
 
 </article>
 </section>
