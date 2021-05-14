@@ -21,6 +21,48 @@ $("input[name='planType']").on('click', ()=>{
 })
 
 
+// Mast prices
+const mastPrices = {
+  monthly : {
+    '30' : 12,
+    '50' : 20
+  },
+  outright : {
+    '30' : 100,
+    '50' : 150
+  }
+}
+
+
+// Control Mast option presentation
+$("input[name='itMastType'").parent().hide()
+$("input[name='itMast'").parent().hide()
+
+// Show/Hide Purchase Type
+$("#itMastReq").on('click', ()=>{
+  if($("#itMastReq").prop('checked')){
+    $("input[name='itMastType']").parent().show()
+  } else{
+    $("input[name='itMastType']").parent().hide()
+  }
+})
+
+// Display pricing options
+$("input[name='itMastType']").on('click', ()=>{
+  const type = $("input[name='itMastType']:checked").val()
+  $("#itMastSize").empty()
+  if(type){
+    $("#itMastSize").append(
+      `<label>30Ft: $${mastPrices[type]["30"]}<input type="radio" name="itMastSize", value="${mastPrices[type]["30"]}"></label><br>`,
+      `<label>50Ft: $${mastPrices[type]["50"]}<input type="radio" name="itMastSize" value="${mastPrices[type]["50"]}"></label><br>`
+    )
+  }
+})
+
+
+
+
+
 // Stores plan pricing, used for ticket generation and to fill html, must be edited when prices change
 
 const planPricing = {
@@ -107,9 +149,9 @@ $("#installTicketForm").on('submit', (e)=>{
       // update total
       total += Number($("input[name='itTri']:checked").attr('price'));
     }
-    if($("input[name='itMast']:checked").val()){
+    if($("#itMastReq").prop('checked') && $("input[name='itMastType']:checked").val() && $('input[name="itMastSize"]:checked')){
       // set var
-      mast = ` - Mast: ${$("input[name='itTri']:checked").parent().text()}\n`;
+      mast = ` - Mast: ${$("input[name='itMastType']:checked").val() + ' ' + $('input[name="itMastSize"]:checked').parent().text() }\n`;
       // update total
       total += Number($("input[name='itMast']:checked").attr('price'));
     }
