@@ -175,6 +175,8 @@ $("#installTicketForm").on('submit', (e)=>{
     const time = ' - ' + $("input[name='timeInstall']:checked").val() + '\n';
     const agent = $("#agent").val();
     const notes = $("#itNotes").val();
+    const towers = " - Towers Reviewed: " +  $("#towersReviewed").val() + " \n";
+    const gnp = " - GNP: " + $("#snipGNP").val() + " \n"
     
     // Generate and append subject to DOM
     let subject = 'Install | ' + $("#itDate").val() + ' | ' + time + ' | ' + zone + ' | ' + hubb
@@ -209,6 +211,9 @@ $("#installTicketForm").on('submit', (e)=>{
 
     **Agent Notes**
     ${notes}
+
+    ${towers}
+    ${gnp}
     `
     $("#itBody").val(body)
     return true
