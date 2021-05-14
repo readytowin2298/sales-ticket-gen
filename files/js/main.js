@@ -44,6 +44,8 @@ $("#itMastReq").on('click', ()=>{
     $("input[name='itMastType']").parent().show()
   } else{
     $("input[name='itMastType']").parent().hide()
+    $("#itMastSize").empty()
+    $("input[name='itMastType'][value='']").prop("checked", true)
   }
 })
 
