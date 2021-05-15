@@ -934,8 +934,8 @@ Reminders:<br><br>
 <li>Never guarantee speeds or plan availability</li><br><br>
 <li>Transfers must be completed the same day</li><br><br>
 <li>Sooner date requests must be Supervisor approved</li><br><br>
-<li>Tower Host requests must be emailed to CWarren and JFlores with contact info and coordinates</li><br><br>
-<li>Tower Builds must be made as a ticket and assigned to CWarren</li><br><br>
+<li>Tower Host requests must be emailed to SFerris with contact info and coordinates</li><br><br>
+<li>Tower Builds must be made as a ticket and assigned to SFerris</li><br><br>
 <li>Masts must be approved and scheduled by Dispatch</li><br><br>
 <li>Poles over 20' require two technicians, must be scheduled by Dispatch</li><br><br>
 <li>10' Tripods require two technicians, must be scheduled by Dispatch</li><br><br>
@@ -1076,7 +1076,7 @@ A: Yes<br><br><br>
 <li> Billing Hours: Monday-Friday, 8AM-6PM</li><br>
 <li>Site Survey Fee's are $70 + tax</li><br>
 
-<li>Assign tickets to KRose</li><br>
+<li>Assign tickets to KTrujillo</li><br>
 <li>If there will be lapse in service due to moving, please include relevant dates in notes.  Please refer to <a style="color: #99e6ff;" href="https://nxlink.sharepoint.com/teams/sales/_layouts/15/Doc.aspx?sourcedoc={616e24cd-5ac8-4cd0-829a-1513aa8e255b}&action=view&wd=target%28Sales%20Process.one%7C1bd9a0c5-f167-431a-934f-055d6ef50ea9%2FMoves%7C8f62f845-4351-4f09-82f8-119683481416%2F%29">Team Book > Moves</a> for more information<br><br>
 </li>
 
@@ -1255,54 +1255,48 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 <!------------------------------Tower Host Ticket--------------------------------------------->
 
 <div id="towerHost" class="tabcontent">
-  <fieldset class="fieldsetTop">
-    <legend><i class="fas fa-broadcast-tower"></i>&nbsp;&nbsp;Tower Host</legend>
+    <fieldset class="fieldsetTop">
+        <legend><i class="fas fa-broadcast-tower"></i>&nbsp;&nbsp;Tower Host</legend>
 
-	 <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
-
-    <select id="reason" class="dropdown">
-      <option value="">-- Reason for Call --</option>
-      <option value="towerclimb"> Schedule Tower Climb</option>
-      <option value="mastinstall"> Schedule Mast Install</option>
-      <option value="p2p"> Schedule Point to Point</option>
-      <option value="tripod"> Schedule 10' Tripod</option>
-      <option value="other"> Other</option>
+        <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
 
 
-      <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
-      <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
 
-    </select>
+
+        <input type="text" id='prevtick' placeholder="Address?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Coordinates " name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prefer' placeholder="State(s)? " name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Any relevant tickets? " name="" class="mainInputBox2" autocomplete="off">
 
 
 
 
 
-<!--------------text area ------------------>
+        <!--------------text area ------------------>
 
-<fieldset>
-	<legend>Notes:</legend>
-    <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
-</fieldset>
-
-
+        <fieldset>
+            <legend>Notes:</legend>
+            <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
+        </fieldset>
 
 
-<!--------------GENERATE TICKET ------------------>
 
 
-<fieldset>
-<legend>Ticket Notes:</legend>
-<button class="generateNote" onclick='javascript:towerHostFunction();'><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
-Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
-<input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
-<div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
+        <!--------------GENERATE TICKET ------------------>
+
+
+        <fieldset>
+            <legend>Ticket Notes:</legend>
+            <button class="generateNote" onclick='javascript:towerHostFunction();'><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+            Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
+            <input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
+            <div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
 <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
-</fieldset>
+        </fieldset>
 
 
- </div>
+</div>
 
 
  <!---------------Upgrade Request----------------->
