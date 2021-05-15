@@ -61,7 +61,7 @@
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'damageClaim')" id="defaultOpen"><i class="fas fa-exclamation-triangle"></i> Damage Claim Ticket</button>
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'salesInquiry')" id="defaultOpen"><i class="fas fa-money-check"></i> Sales Inquiry Ticket</button>
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerHost')" id="defaultOpen"><i class="fas fa-broadcast-tower"></i> Tower Host</button>
-	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerSurvey')" id="defaultOpen"><i class="fas fa-wifi"></i> Tower Site Survey</button>
+	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerSurvey')" id="defaultOpen"><i class="fas fa-wifi"></i> Tower Site Survey/Tower Build</button>
       <button class="tablinks buttonMenu" onclick="openTab(event, 'voip')" id="defaultOpen"><i class="fas fa-phone"></i> VOIP</button>
       <button class="tablinks buttonMenu" onclick="openTab(event, 'upgradeRequest')" id="defaultOpen"><i class="fas fa-phone"></i> Upgrade Requests</button>
 
@@ -402,13 +402,14 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
   <fieldset class="fieldsetTop">
     <legend><i class="fas fa-exclamation-circle"></i>  Supervisor Ticket</legend>
 
-	<select id="reason" class="dropdown">
-      <option value="">-- Select reason --</option>
-      <option value="towerclimb">Review</option>
-      <option value="p2p">Second Attempt</option>
-      <option value="tripod">Sooner Date Request</option>
-      <option value="other"> Other</option>
-	</select>
+    <select id="reason" class="dropdown">
+        <option value="">-- Select reason --</option>
+        <option value="review">Review</option>
+        <option value="secondattempt">Second Attempt</option>
+        <option value="soonerdate">Sooner Date Request</option>
+        <option value="towerbuild"> Tower Build Inquiry</option>
+        <option value="other">Other</option>
+    </select>
 
 
 	<input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
@@ -782,28 +783,92 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 <!-- **************************** Fiber Ticket **************************** -->
 
 <div id="fiber" class="tabcontent">
-  <fieldset class="fieldsetTop">
-    <legend><i class="fas fa-headset"></i> Fiber Ticket</legend>
+    <fieldset class="fieldsetTop">
+        <legend><i class="fas fa-headset"></i> Fiber Ticket</legend>
 
-    <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
 
-    <select id="reason" class="dropdown">
-      <option value="">-- Plan Type --</option>
-	  <option value="f25">Fiber 25</option>
-      <option value="towerclimb"> Fiber 50</option>
-      <option value="mastinstall"> Fiber 100</option>
-      <option value="p2p"> Fiber 300</option>
-      <option value="tripod"> Fiber 500</option>
-      <option value="other">Fiber 1000</option>
+        <input type="text" id='prevtick' placeholder="Account Number" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Address?" name="" class="mainInputBox2" autocomplete="off">
 
 
-      <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
-      <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
 
-    </select>
+        <label><input type="radio" value="HO" name="hudsonOaks" checked>Hudson Oaks</label>
+        <label><input type="radio" value="PE" name="patriotEstates" checked>Patriot Estates</label>
+        <label><input type="radio" value="CW" name="cottonWood" checked>Cottonwood</label>
+        <label><input type="radio" value="EM" name="eagleMountain" checked>Eagle Mountain</label>
+        <label><input type="radio" value="CR" name="crossRoads" checked>Cross Roads</label>
 
-</fieldset>
+
+
+
+        <select id="2YrPlanType" class="dropdown planType">
+            <option value="">-- Hudson Oaks --</option>
+            <option value="Next15">Fiber 25</option>
+            <option value="Next20">Fiber 50</option>
+            <option value="Next25">Fiber 100 </option>
+            <option value="Next35">Fiber 300 </option>
+            <option value="Next50">Fiber 500</option>
+            <option value="Next50">Fiber 1000</option>
+        </select>
+
+        <select id="PE" class="dropdown patriotEstates">
+            <option value="">-- Patriot Estates --</option>
+            <option value="Next15">Fiber 25</option>
+            <option value="Next20">Fiber 50</option>
+            <option value="Next25">Fiber 100 </option>
+            <option value="Next35">Fiber 300 </option>
+            <option value="Next50">Fiber 500</option>
+            <option value="Next50">Fiber 1000</option>
+        </select>
+
+
+        <select id="CW" class="dropdown cottonWood">
+            <option value="">-- Cottonwood --</option>
+            <option value="Next15">Fiber 25</option>
+            <option value="Next20">Fiber 50</option>
+            <option value="Next25">Fiber 100 </option>
+            <option value="Next35">Fiber 300 </option>
+            <option value="Next50">Fiber 500</option>
+            <option value="Next50">Fiber 1000</option>
+        </select>
+
+        <select id="EM" class="dropdown eagleMountain">
+            <option value="">-- Eagle Mountain --</option>
+            <option value="Next15">Fiber 25</option>
+            <option value="Next20">Fiber 50</option>
+            <option value="Next25">Fiber 100 </option>
+            <option value="Next35">Fiber 300 </option>
+            <option value="Next50">Fiber 500</option>
+            <option value="Next50">Fiber 1000</option>
+        </select>
+
+
+
+        <select id="CR" class="dropdown crossRoads">
+            <option value="">-- Crossroads --</option>
+            <option value="Next15">Fiber 25</option>
+            <option value="Next20">Fiber 50</option>
+            <option value="Next25">Fiber 100 </option>
+            <option value="Next35">Fiber 300 </option>
+            <option value="Next50">Fiber 500</option>
+            <option value="Next50">Fiber 1000</option>
+        </select>
+
+
+        <input type="text" id='prevtick' placeholder="Install Cost?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Contract Length?" name="" class="mainInputBox2" autocomplete="off">
+
+        <input type="text" id='prevtick' placeholder="Fiber Zone?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Slot?" name="" class="mainInputBox2" autocomplete="off">
+
+        <input type="text" id='prevtick' placeholder="Coordinates" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Who Will be there (over 18yrs old?)" name="" class="mainInputBox2" autocomplete="off">
+
+        </select>
+
+    </fieldset>
 
 <!--------------text area ------------------>
 
@@ -1373,7 +1438,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
             <li>The customer is aware that installing to a tower will require two technicians and a $200 install fee</li><br />
 
             <li>Nextlink does not build or supply the tower </li><br />
-             <li>If the customer is interested in having a tower built, please discuss Tower Build expectations and create a ticket for SFerris</li><br /><br />
+             <li>If the customer is interested in having a tower built through a company we are partnered with, please discuss Tower Build expectations and create Supervisor Ticket under "Tower Build Inquiry" to SFerris</li><br /><br />
             (I'm going to put a link to the Tower Build process here)<br /><br />
 
             IMPORTANT:<br />
