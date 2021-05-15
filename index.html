@@ -61,7 +61,7 @@
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'damageClaim')" id="defaultOpen"><i class="fas fa-exclamation-triangle"></i> Damage Claim Ticket</button>
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'salesInquiry')" id="defaultOpen"><i class="fas fa-money-check"></i> Sales Inquiry Ticket</button>
 	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerHost')" id="defaultOpen"><i class="fas fa-broadcast-tower"></i> Tower Host</button>
-	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerBuild')" id="defaultOpen"><i class="fas fa-wifi"></i> Tower Build</button>
+	  <button class="tablinks buttonMenu" onclick="openTab(event, 'towerSurvey')" id="defaultOpen"><i class="fas fa-wifi"></i> Tower Site Survey</button>
       <button class="tablinks buttonMenu" onclick="openTab(event, 'voip')" id="defaultOpen"><i class="fas fa-phone"></i> VOIP</button>
       <button class="tablinks buttonMenu" onclick="openTab(event, 'upgradeRequest')" id="defaultOpen"><i class="fas fa-phone"></i> Upgrade Requests</button>
 
@@ -511,6 +511,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
     <select id="reason" class="dropdown">
       <option value="">-- Reason for Call --</option>
       <option value="towerclimb"> Collect Site Survey Fee</option>
+
       <option value="mastinstall"> Collect Write Off</option>
 
       <option value="p2p"> Suspend Request</option>
@@ -557,52 +558,69 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
 
 <div id="siteSurvey" class="tabcontent">
-  <fieldset class="fieldsetTop">
-    <legend><i class="fas fa-binoculars"></i>  Site Survey</legend>
+    <fieldset class="fieldsetTop">
+        <legend><i class="fas fa-binoculars"></i>  Site Survey</legend>
 
 
-	<select id="rentOwn" class="dropdown">
-          <option value="">-- Rent or Own? --</option>
-          <option value="rent">Rent</option>
-          <option value="own">Own</option>
-          <label><input type="checkbox" id='tsRouter'> LLA uploaded? </label><br>
-    </select>
+        <select id="rentOwn" class="dropdown">
+            <option value="">-- Rent or Own? --</option>
+            <option value="rent">Rent</option>
+            <option value="own">Own</option>
+            <label><input type="checkbox" id='tsRouter'> LLA uploaded? </label>
+            <br>
+        </select>
 
-	<input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
 
-	<input type="text" id='prevtick' placeholder="Account number #" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Important message" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prevtick' placeholder="Account number #?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" class="mainInputBox2" placeholder="Address?" required id="itAddress">
 
-	<input type="text" id='prevtick' placeholder="Associated ticket #'s" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Billing ticket # " name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prevtick' placeholder="Associated tickets?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Billing ticket # " name="" class="mainInputBox2" autocomplete="off">
 
-	<input type="text" id='prevtick' placeholder="GPS coordinates" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Where to test" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prevtick' placeholder="GPS coordinates" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Where to test (backyard, side, etc)?" name="" class="mainInputBox2" autocomplete="off">
 
-	<input type="text" id='prevtick' placeholder="Slot" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Zone" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prevtick' placeholder="Slot" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Zone" name="" class="mainInputBox2" autocomplete="off">
 
-
-
-
-
-	<div><input type="text" class="mainInputBox2" id="ssDate" placeholder="MM/DD/YY" type="text" autocomplete="off"/></div>
-
-    <label>
-              <font color="#ffffff">  <input type="radio" id='timeAM'> 8:00 AM -12:00 PM<br>
-              <input type="radio" id='timePM'> 1:00 PM -5:00 PM<br> <br>
-    </label>
+        <input type="text" id='prefer' placeholder="Important message" name="" class="mainInputBox" autocomplete="off">
 
 
 
 
+        <div><input type="text" class="mainInputBox2" id="ssDate" placeholder="MM/DD/YY" type="text" autocomplete="off" /></div>
+
+        <label>
+            <font color="#ffffff">
+                <input type="radio" id='timeAM'> 8:00 AM -12:00 PM<br>
+                <input type="radio" id='timePM'> 1:00 PM -5:00 PM<br> <br>
+        </label>
 
 
 
-<!--------------text area ------------------>
 
-</fieldset>
+
+        Expectations:
+        <ul>
+            <li>Site Survey is a $70 non-refundable fee that does NOT go toward install</li><br />
+            <li>Fee must first be collected by Billing prior to scheduling</li><br />
+            <li>Site Survey's are placed on the Service Call Scheduler</li><br />
+            <li>The customer understands that we do not set poles or trench</li><br />
+            <li>The technician will only be able to test at 20' from the ground </li><br />
+            <li>If additional height testing is needed, a Remote Tower Site Survey may be necessary</li>
+           
+                
+          
+
+        </ul>
+        <label>Expectations Set?</label><input type="checkbox" required>
+
+
+        <!--------------text area ------------------>
+
+    </fieldset>
 
 <fieldset>
 	<legend>Notes:</legend>
@@ -1265,7 +1283,7 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
 
         <input type="text" id='prevtick' placeholder="Address?" name="" class="mainInputBox" autocomplete="off">
-        <input type="text" id='prefer' placeholder="Coordinates " name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Coordinates? " name="" class="mainInputBox2" autocomplete="off">
         <input type="text" id='prefer' placeholder="State(s)? " name="" class="mainInputBox" autocomplete="off">
         <input type="text" id='prefer' placeholder="Any relevant tickets? " name="" class="mainInputBox2" autocomplete="off">
 
@@ -1331,42 +1349,66 @@ Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><b
 
 <!-----------------------------Tower Build--------------------------------------------->
 
-<div id="towerBuild" class="tabcontent">
-  <fieldset class="fieldsetTop">
-    <legend><i class="fas fa-wifi"></i>&nbsp;Tower Build</legend>
+<div id="towerSurvey" class="tabcontent">
+    <fieldset class="fieldsetTop">
+        <legend><i class="fas fa-wifi"></i>&nbsp;Tower Site Survey</legend>
 
-	<input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
-    <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
-    <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
+        <input type="text" id='prevtick' placeholder="Previous install attempt tickets?" name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Billing ticket? " name="" class="mainInputBox2" autocomplete="off">
 
-    </select>
+        <input type="text" id='prefer' placeholder="Coordinates of test site? " name="" class="mainInputBox" autocomplete="off">
+        <input type="text" id='prefer' placeholder="Location? (near barn, by pool, etc) " name="" class="mainInputBox2" autocomplete="off">
 
-
-
-
-
-<!--------------text area ------------------>
-
-<fieldset>
-	<legend>Notes:</legend>
-    <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
-</fieldset>
+        </select>
 
 
 
+        Expectations:
+        <ul>
+            <li>Tower Site Survey is $200 and does go toward install costs </li><br />
+            <li>$200 fee must be first collected by billing</li><br />
+            <li>This is a remote analysis and service is not guaranteed until techs are on site to install</li><br />
+            <li>The customer is aware that installing to a tower will require two technicians and a $200 install fee</li><br />
 
-<!--------------GENERATE TICKET ------------------>
+            <li>Nextlink does not build or supply the tower </li><br />
+             <li>If the customer is interested in having a tower built, please discuss Tower Build expectations and create a ticket for SFerris</li><br /><br />
+            (I'm going to put a link to the Tower Build process here)<br /><br />
+
+            IMPORTANT:<br />
+
+            <li>Tower Site Surveys with the Bucket Truck can only be done with adjacent counties and MUST be requested and approved through Dispatch. The maximum height that this can be tested with is 50'</li>
+
+          
+    
+            
+
+        </ul>
+        <label>Expectations Set?</label><input type="checkbox" required>
 
 
-<fieldset>
-<legend>Ticket Notes:</legend>
-<button class="generateNote" onclick='javascript:towerHostFunction();'><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
-Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
-<input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
-<div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
+        <!--------------text area ------------------>
+
+        <fieldset>
+            <legend>Notes:</legend>
+            <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
+        </fieldset>
+
+
+
+
+        <!--------------GENERATE TICKET ------------------>
+
+
+        <fieldset>
+            <legend>Ticket Notes:</legend>
+            <button class="generateNote" onclick='javascript:towerHostFunction();'><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+            Subject Line: <button class="btn-copy" onclick="thcopySubject()">COPY</button><br>
+            <input type="text" class="textboxInput" id='thSubject' autocomplete="off"></textarea><br>
+            <div>Ticket Display: <button class="btn-copy" onclick="thcopyTicket()">COPY</button></div>
 <textarea id='thTicket' class="textarea200" autocomplete="off"></textarea><br>
-</fieldset>
+        </fieldset>
 
 </div>
 
