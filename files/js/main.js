@@ -218,3 +218,13 @@ $("#installTicketForm").on('submit', (e)=>{
     $("#itBody").val(body)
     return true
 })
+
+
+$("#PatriotEstates, #Cottonwood, #EagleMountain, #CrossRoads").hide()
+
+$("input[name='fiberType']").on('click', () => {
+    $(".fiberType").hide()
+    const selected = $("input[name='fiberType']:checked").val()
+    const id = selected + "FiberType"
+    $(`#${id}`).show()
+})
