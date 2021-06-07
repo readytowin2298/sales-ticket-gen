@@ -220,7 +220,8 @@ $("#installTicketForm").on('submit', (e)=>{
 })
 
 
-$("#PatriotEstates, #Cottonwood, #EagleMountain, #CrossRoads").hide()
+$(".fiberType").hide()
+$("#hudsonOaksFiberType").show()
 
 $("input[name='fiberType']").on('click', () => {
     $(".fiberType").hide()

@@ -812,7 +812,7 @@
 
 
 
-              <label><input type="radio" value="hudsonOaks" name="fiberType" checked>Hudson Oaks</label>
+              <label><input type="radio" value="hudsonOaks" default name="fiberType" checked>Hudson Oaks</label>
 
               <label style="color: #ff8000;"><input type="radio" value="patriotEstates" name="fiberType">Patriot Estates</label>
 
@@ -820,12 +820,12 @@
 
               <label><input type="radio" value="crossRoads" name="fiberType">Crossroads</label><br />
 
-              <label style="color: #ff8000;"><input type="radio" value="eagleMountain" name="fiberType" checked> Eagle Mountain </label>
+              <label style="color: #ff8000;"><input type="radio" value="eagleMountain" name="fiberType"> Eagle Mountain </label>
 
 
 
 
-              <select id="hudsonOaksFiberType" class="dropdown fiberType">
+              <select id="hudsonOaksFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Hudson Oaks --</option>
                   <option value="Next15">Fiber 25</option>
                   <option value="Next20">Fiber 50</option>
@@ -835,7 +835,7 @@
                   <option value="Next50">Fiber 1000</option>
               </select>
 
-              <select id="patriotEstatesFiberType" class="dropdown fiberType">
+              <select id="patriotEstatesFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Patriot Estates --</option>
                   <option value="Next15">Fiber 25</option>
                   <option value="Next20">Fiber 50</option>
@@ -846,7 +846,7 @@
               </select>
 
 
-              <select id="cottonWoodFiberType" class="dropdown fiberType">
+              <select id="cottonWoodFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Cottonwood --</option>
                   <option value="Next15">Fiber 25</option>
                   <option value="Next20">Fiber 50</option>
@@ -856,7 +856,7 @@
                   <option value="Next50">Fiber 1000</option>
               </select>
 
-              <select id="eagleMountainFiberType" class="dropdown fiberType">
+              <select id="eagleMountainFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Eagle Mountain --</option>
                   <option value="Next15">Fiber 25</option>
                   <option value="Next20">Fiber 50</option>
@@ -1716,8 +1716,9 @@
       </script>
 
       <!-- David's Js -->
-      <script type="text/javascript" src="files/js/main.js?v=2.6"></script> <!-- JS scripts for all pages-->
+      <script type="text/javascript" src="files/js/main.js?v=1.0"></script> <!-- JS scripts for all pages-->
       <script type="text/javascript" src="files/js/copy.js?v=1.0"></script> <!-- JS script for copy function and related event listeners-->
+      <script type="text/javascript" src="files/js/fiber.js?v=1.0"></script>
 
   </article>
 </section>
