@@ -749,19 +749,30 @@
               <input type="text" id='contact' placeholder="Who is calling?" name="" class="mainInputBox" autocomplete="off">
               <input type="text" id='cbnumber' placeholder="Best callback number?" name="" class="mainInputBox2" autocomplete="off">
 
-              <select id="reason" class="dropdown">
-                  <option value="">-- Reason for Call --</option>
-                  <option value="towerclimb"> Schedule Tower Climb</option>
-                  <option value="mastinstall"> Schedule Mast Install</option>
-                  <option value="p2p"> Schedule Point to Point</option>
-                  <option value="tripod"> Schedule 10' Tripod</option>
-                  <option value="other"> Other</option>
+              <input type="text" id='prevtick' placeholder="Personal or Managed RTR?" name="" class="mainInputBox" autocomplete="off">
+              <input type="text" id='cbnumber' placeholder="Ship RTR?" name="" class="mainInputBox2" autocomplete="off">
+              
+              <input type="text" id='prevtick' placeholder="Desired SSID | Password?" name="" class="mainInputBox" autocomplete="off">
+              <input type="text" id='cbnumber' placeholder="M2M or 2YR" name="" class="mainInputBox2" autocomplete="off">
+            
+              <input type="text" id='prevtick' placeholder="PandaDoc uploaded?" name="" class="mainInputBox" autocomplete="off">
+              <input type="text" id='cbnumber' placeholder="Date of Transfer (Min. 48hrs)" name="" class="mainInputBox2" autocomplete="off">
+              
+        
 
+         <label style="color: #ff8000;"><input type="radio" value="remotetransfer" name="remoteTransfer">Remote Transfer (ERT)</label>
 
-                  <input type="text" id='prevtick' placeholder="Previous Install Ticket #" name="" class="mainInputBox" autocomplete="off">
-                  <input type="text" id='prefer' placeholder="Availability (Weekends, Days, etc) " name="" class="mainInputBox2" autocomplete="off">
+              <label><input type="radio" value="remotetransfer" name="remoteTransfer">On-Site (Schedule Tech)</label>
 
-              </select>
+              <br><br><br><br>
+            
+        
+              <label><input type="checkbox" name="itAdtlCB" id='itZyxel'><font color="#ff8000"> Is the POE on-site?</font></label><br>
+              <label><input type="checkbox" name="itAdtlCB" id='itMikrotik'> Are the cables on-site?</label><br>
+              <label><input type="checkbox" name="itAdtlCB" id='itZyxel'><font color="#ff8000"> Ship Router? (only to address on file)</font></label><br>
+              <label><input type="checkbox" name="itAdtlCB" id='itMikrotik'> Is the customer aware of minimum 48r turn around?</label><br>
+              
+
 
 
               </select>
@@ -827,55 +838,53 @@
 
               <select id="hudsonOaksFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Hudson Oaks --</option>
-                  <option value="Next15">Fiber 25</option>
-                  <option value="Next20">Fiber 50</option>
-                  <option value="Next25">Fiber 100 </option>
-                  <option value="Next35">Fiber 300 </option>
-                  <option value="Next50">Fiber 500</option>
-                  <option value="Next50">Fiber 1000</option>
+                  <option value="Next15">Next25 $59.00</option>
+                  <option value="Next20">Next50 $69.00</option>
+                  <option value="Next25">Next100 $79.00 </option>
+                  <option value="Next35">Next300 $99.00</option>
+                  <option value="Next50">Next500 $109.00</option>
+                  <option value="Next50">Next1000 $119.00</option>
               </select>
 
               <select id="patriotEstatesFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Patriot Estates --</option>
-                  <option value="Next15">Fiber 25</option>
-                  <option value="Next20">Fiber 50</option>
-                  <option value="Next25">Fiber 100 </option>
-                  <option value="Next35">Fiber 300 </option>
-                  <option value="Next50">Fiber 500</option>
-                  <option value="Next50">Fiber 1000</option>
+                  <option value="Next15">Next25 $59.00</option>
+                  <option value="Next20">Next50 $69.00</option>
+                  <option value="Next25">Next100 $79.00 </option>
+                  <option value="Next35">Next300 $99.00 </option>
+                  <option value="Next50">Next500 $109.00</option>
+                  <option value="Next50">Next1000 $119.00 </option>
               </select>
 
 
               <select id="cottonWoodFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Cottonwood --</option>
-                  <option value="Next15">Fiber 25</option>
-                  <option value="Next20">Fiber 50</option>
-                  <option value="Next25">Fiber 100 </option>
-                  <option value="Next35">Fiber 300 </option>
-                  <option value="Next50">Fiber 500</option>
-                  <option value="Next50">Fiber 1000</option>
+                  <option value="Next15">Next25 $59.00</option>
+                  <option value="Next20">Next50 $69.00</option>
+                  <option value="Next25">Next100 $79.00 </option>
+                  <option value="Next35">Next300 $99.00 </option>
+                  <option value="Next50">Next500 $109.00</option>
+                  <option value="Next50">Next1000 $119.00</option>
               </select>
 
               <select id="eagleMountainFiberType" name="fiberTypeOption" class="dropdown fiberType">
                   <option value="">-- Eagle Mountain --</option>
-                  <option value="Next15">Fiber 25</option>
-                  <option value="Next20">Fiber 50</option>
-                  <option value="Next25">Fiber 100 </option>
-                  <option value="Next35">Fiber 300 </option>
-                  <option value="Next50">Fiber 500</option>
-                  <option value="Next50">Fiber 1000</option>
+                  <option value="Next15">Next100 $99.00</option>
+                  <option value="Next20">Next300 $119.00</option>
+                  <option value="Next25">Next500 $139.00 </option>
+                  <option value="Next35">Next1000 $159.00 </option>
+              
               </select>
 
 
 
               <select id="crossRoadsFiberType" class="dropdown fiberType">
-                  <option value="">-- Crossroads --</option>
-                  <option value="Next15">Fiber 25</option>
-                  <option value="Next20">Fiber 50</option>
-                  <option value="Next25">Fiber 100 </option>
-                  <option value="Next35">Fiber 300 </option>
-                  <option value="Next50">Fiber 500</option>
-                  <option value="Next50">Fiber 1000</option>
+                  <option value="">-- Forest Hill at Cross Roads --</option>
+                  <option value="Next15">Next100 $99.00</option>
+                  <option value="Next20">Next300 $119.00</option>
+                  <option value="Next25">Next500 $139.00</option>
+                  <option value="Next35">Next1000 $159.00 </option>
+            
               </select>
 
 
@@ -1082,7 +1091,6 @@
                   <li>Always warm transfer between agents and departments</li><br><br>
                   <li>Never give out tower names or locations</li><br><br>
                   <li>Never guarantee speeds or plan availability</li><br><br>
-                  <li>Transfers must be completed the same day</li><br><br>
                   <li>Sooner date requests must be Supervisor approved</li><br><br>
                   <li>Tower Host requests must be emailed to SFerris with contact info and coordinates</li><br><br>
                   <li>Tower Builds must be made as a ticket and assigned to SFerris</li><br><br>
